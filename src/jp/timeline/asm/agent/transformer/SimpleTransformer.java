@@ -84,7 +84,6 @@ public class SimpleTransformer implements ClassFileTransformer {
         classNode.accept(classWriter);
 
         return classWriter.toByteArray();
-        //return maps.get(className).transform(loader, className, classBeingRedefined, protectionDomain, classfileBuffer);
     }
 
     private InsnList getEventInsnTick() {
