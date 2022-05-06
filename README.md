@@ -9,6 +9,9 @@ Hitbox size
 Block reach
 Sprint
 
+## Already owned but not added
+Timer
+
 ## Future
 HUD
 Ingame Menu
@@ -17,5 +20,9 @@ No Fall Damage
 Cross-Version
 OptiFine / Forge Support
 
+## Other
 ### What we have done so far
 Class, Method and Field in minecraft are simulated by java reflection
+### How use it
+Build attach and client, the location of the attach file to the location of the client
+Run attach.
