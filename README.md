@@ -1,12 +1,16 @@
 # SekaiMC
 A Free / OpenSource Injection Cheat for Minecraft 1.8.9
 Vanilla Only
+
 ClassNotFound will be throw when using optifine
 
 ## Features
 Auto Clicker
+
 Hitbox size
+
 Block reach
+
 Sprint
 
 ## Already owned but not added
@@ -14,10 +18,15 @@ Timer
 
 ## Future
 HUD
+
 Ingame Menu
+
 Reach
+
 No Fall Damage
+
 Cross-Version
+
 OptiFine / Forge Support
 
 ## Other
