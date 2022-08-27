@@ -132,15 +132,16 @@ public class FieldUtils {
 
         modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
 
+        if (!field.isAccessible())
+            field.setAccessible(true);
+
         field.set(instance, newValue);
     }
 
     public static void setField(Field field, Object instance, Object newValue) throws NoSuchFieldException, IllegalAccessException
     {
-        Field modifiersField = Field.class.getDeclaredField("modifiers");
-
-        if (!modifiersField.isAccessible())
-            modifiersField.setAccessible(true);
+        if (!field.isAccessible())
+            field.setAccessible(true);
 
         field.set(instance, newValue);
     }
