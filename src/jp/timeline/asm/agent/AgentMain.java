@@ -26,23 +26,14 @@ public class AgentMain {
         try {
             System.out.println("Injected");
 
-            /*
-            Arrays.stream(inst.getAllLoadedClasses())
-                    .filter(c -> c.getName().equalsIgnoreCase("net.minecraft.launchwrapper.Launch") || c.getName().equalsIgnoreCase("net.minecraft.launchwrapper.LaunchClassLoader"))
-                    .forEach(cls -> {
-                        try {
-                            System.out.println("Optifine init");
-                            if (cls.getName().equalsIgnoreCase("net.minecraft.launchwrapper.Launch"))
-                                inst.addTransformer(new OptiFineLaunch(), true);
-                            else
-                                inst.addTransformer(new OptiFineLaunchClassLoader(), true);
-                            inst.retransformClasses(cls);
-                        } catch (Throwable e) {
-                            e.printStackTrace();
-                        }
-                    });
-*/
+            boolean isOptiFineOrForge = false;
 
+            for (Class<?> c : inst.getAllLoadedClasses())
+                if (c.getName().equalsIgnoreCase("net.minecraft.launchwrapper.LaunchClassLoader")) {
+                    isOptiFineOrForge = true;
+                    break;
+                }
+            
             inst.addTransformer(new SimpleTransformer(classList), true);
 
             Arrays.stream(inst.getAllLoadedClasses())
